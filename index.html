@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Interest Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Open Interest Tracker</h1>
+    <p>
+      This page fetches option open‑interest data for three major tickers—QQQ,
+      SPY and SPX—and compares today’s value with yesterday’s.  Open interest
+      represents the number of outstanding option contracts that have not been
+      closed or exercised.  Exchanges report the data at the end of each
+      trading day.
+    </p>
+    <button id="update-button">Update Data</button>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Date</th>
+          <th>Open Interest</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be populated dynamically -->
+      </tbody>
+    </table>
+    <p class="note">
+      Notes:
+      <ul>
+        <li>
+          Data is fetched from Yahoo Finance’s public options API.  You may need
+          to run this page through a local HTTP server (e.g. <code>python
+          -m http.server</code>) to avoid CORS restrictions.  Some corporate
+          networks block direct access to the Yahoo API; if you see errors,
+          check your network settings.
+        </li>
+        <li>
+          The app stores the most recent open‑interest values in your browser’s
+          <code>localStorage</code>.  Clearing your cache will remove the
+          history.
+        </li>
+      </ul>
+    </p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
